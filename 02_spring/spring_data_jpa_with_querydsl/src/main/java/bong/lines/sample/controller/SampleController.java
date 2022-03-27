@@ -1,6 +1,6 @@
 package bong.lines.sample.controller;
 
-import bong.lines.sample.service.ItemService;
+import bong.lines.sample.service.BusinessService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,10 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class SampleController {
 
-    private final ItemService itemService;
+    private final BusinessService businessService;
 
-    @GetMapping("/helloworld")
-    public Object helloWorld(){
-        return itemService.getHelloWorld();
+    @GetMapping("/selectBsns")
+    public Object selectBsns(){
+
+        return businessService.getSelectBsns();
+
     }
+
 }

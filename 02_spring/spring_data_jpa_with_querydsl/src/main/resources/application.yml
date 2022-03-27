@@ -1,10 +1,23 @@
 spring:
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
     properties:
       hibernate:
         format_sql: true
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@192.168.50.170:1882/WPMS12
+    username: WINGSJPATEST
+    password: WINGS_4172
+    hikari:
+      connection-timeout: 60000
+      maximum-pool-size: 2
+
 logging:
   level:
     org.hibernate.SQL: debug
+    org.hibernate.type: trace
+
+server:
+  port: 3000
